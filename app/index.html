@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:500,300,700,400' rel='stylesheet' type='text/css'>
+    <link href="src/css/main.css" rel="stylesheet" />
+    <!-- Include the AngularJS library and bootstrap -->
+    <link rel="stylesheet" href="src/lib/bootstrap/css/bootstrap.css" />
+    <script src="src/lib/angular/angular.js"></script>
+</head>
+
+<!-- navbar menu -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Novinky.cz</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+      </div>
+    </div>
+  </nav>
+
+
+  
+  
+       
+<!-- Post title with paragraphs -->
+
+<div ng-app = "myApp">
+  <div class="container">
+    <div class="row">
+      <div ng-controller="MainController" class="col-lg-8">
+        <h1 ng-controller="MainController" class = "postitle" >{{posttitle}}</h1>
+          <p class="lead"></p>
+          <hr>
+          <p >{{posted}}</p>
+        <h1  class="mt-4">{{title}}</h1>
+      <div class="main" ng-controller="MainController"> 
+        <div ng-repeat="paragraph in paragraphs" class="row"> 
+          <p>{{paragraph.text1}}</p>
+          <p>{{paragraph.text2}}</p> 
+    </div>
+</div>
+
+
+<!-- Comment seciton -->
+
+  <img class="img-fluid rounded" src="https://media.novinky.cz/882/758823-top_foto1-1npal.jpg?1562880613/900x300" alt=""> 
+    <div class="card my-4" ng-app="myApp" ng-controller="MainController">
+       <h5 class="card-header">Zanechte komentář</h5>
+        <div class="card-body">
+          <form ng-submit="add()">
+            <div class="form-group"><textarea ng-model="title" class="form-control" rows="3"></textarea> </div>
+                <button type="submit" class="btn btn-primary">Odeslat</button>
+            </div>
+          <div class="card my-4">
+        <div ng-app="myApp" class="media-body">
+            <p  class="mt-5" ng-repeat="t in tasks track by $index">{{ t }} <button class="btn btn-danger" ng-click="delete()">Odstranit</button></p>
+        </div>
+    </div>
+</div>
+
+<!-- static comments -->
+  <div class="media mb-4">
+    <img class="d-flex mr-3 rounded-circle">
+      <div class="media-body">
+<h5 class="mt-0">Commenter 1</h5>
+Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+</div>
+</div>
+
+<!-- Comment with nested comments -->
+<div class="media mb-4">
+  <img class="d-flex mr-3 rounded-circle" >
+    <div class="media-body">
+      <h5 class="mt-0">Commenter 2</h5>
+            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<footer class="py-5 bg-dark">
+  <div class="container">
+    <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+  </div>
+</footer>
+
+<!-- Modules -->
+<script src="src/js/app.js"></script>
+
+<!-- Controllers -->
+<script src="src/js/controllers/MainController.js"></script>
+
+</body>
+
+</html>
+
+
+
