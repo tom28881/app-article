@@ -1,11 +1,15 @@
 app.controller('MainController', ['$scope', function($scope) { 
-  $scope.tasks = [];
-  $scope.add = function() {
-      $scope.tasks.push($scope.title);
+  $scope.comments = [];
+  $scope.add = () => {
+    if($scope.title){
+      $scope.comments.push($scope.title);
+    }
   }
-  $scope.delete = function() {
-      $scope.tasks.splice(this.$index, 1);
+  
+  $scope.delete = () => {
+  $scope.comments.splice(this.$index, 1);
   };
+  
   $scope.paragraphs = [
   { 
     text1: "Dlouhodobé sucho a vedro oslabují tuzemské stromy. Hrozba se nevyhýbá ani českému národnímu stromu – lípě. A to přesto, že se díky hlubokým kořenům dožívá často několika set let. Vedra tak mohou zásadně změnit druhovou skladbu stromů v zeleni mimo les. Místo lip a javorů budeme ve městech potkávat třeba akáty, katalpy a dřezovce. Tyto dřeviny jsou lépe adaptované na sucha – mají například na spodní straně listů drobné chloupky, takže lépe regulují výdej vody.",
@@ -19,6 +23,3 @@ app.controller('MainController', ['$scope', function($scope) {
   $scope.posttitle = "Kvůli suchu a vedru mohou z krajiny zmizet lípy";
   
 }]); 
-
-
- 
