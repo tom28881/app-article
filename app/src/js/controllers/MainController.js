@@ -1,13 +1,20 @@
-app.controller('MainController', ['$scope', function($scope) { 
+app.controller('MainController', ['$scope', ($scope) => { 
   $scope.comments = [];
+  $scope.names = []
   $scope.add = () => {
-    if($scope.title){
-      $scope.comments.push($scope.title);
+    if($scope.title && $scope.name){
+       let addComent = () => {
+        $scope.comments.push($scope.title);
+        $scope.names.push($scope.name);
+
+      }
+      addComent()
     }
   }
   
   $scope.delete = () => {
   $scope.comments.splice(this.$index, 1);
+  $scope.names.splice(this.$index, 1);
   };
   
   $scope.paragraphs = [
