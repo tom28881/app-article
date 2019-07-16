@@ -9,3 +9,9 @@ text-align: center;
 .btn btn-danger{
     margin-left: 50px;
 }
+#comments {
+    text-align: justify;
+    float: left
+   
+}
+
