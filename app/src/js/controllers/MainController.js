@@ -3,7 +3,7 @@ app.controller('MainController', ['$scope', ($scope) => {
   $scope.names = []
   $scope.add = () => {
     if($scope.title && $scope.name){
-       let addComent = () => {
+       const addComent = () => {
         $scope.comments.push($scope.title);
         $scope.names.push($scope.name);
 
